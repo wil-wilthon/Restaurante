@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.mycompany</groupId>
+    <artifactId>Restaurante</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>Restaurante</name>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.release>20</maven.compiler.release>
+        <exec.mainClass>restaurante.rules.App</exec.mainClass>
+    </properties>
+    
+    <!-- Dependências do seu projeto -->
+    <dependencies>
+        <!-- Exemplo: Adicione as dependências necessárias (se houver) -->
+        <!--
+        <dependency>
+            <groupId>com.somegroup</groupId>
+            <artifactId>somelibrary</artifactId>
+            <version>1.0</version>
+        </dependency>
+        -->
+    </dependencies>
+
+    <!-- Configuração do Maven Shade Plugin para criar um JAR Executável -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+
+            <!-- Maven Shade Plugin para empacotar o JAR executável -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.1</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <shadedArtifactAttached>true</shadedArtifactAttached>
+                            <finalName>Peri Surfbar v1.0.0(setup)</finalName> <!-- Nome do JAR -->
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>restaurante.rules.App</mainClass> <!-- Classe principal -->
+                                </transformer>
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
