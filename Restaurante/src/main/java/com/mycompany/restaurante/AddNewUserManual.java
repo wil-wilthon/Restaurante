@@ -14,6 +14,7 @@ import java.util.List;
  * @author User
  */
 public class AddNewUserManual {
+    /*TESTE TESTE TESTE TESTE TESTE TESTE TESTE TESTE*/
     public static void main(String[] args) {
         List<Permissoes> permissoesAdminMaster = List.of(Permissoes.MASTER);
         List<Permissoes> permissoesAdmin = List.of(Permissoes.ADMINISTRADOR);
