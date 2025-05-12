@@ -207,16 +207,20 @@ public class CadastroUsuario extends javax.swing.JPanel {
         if (!senha.equals(confirmarSenha)) {
             mensagem.menssagemErro(this, "As senhas não são iguais!", "Erro no Cadastro",240,50);
             return;
-        } else if (senha.equals("")) {
+        }
+        if (senha.equals("")) {
             mensagem.menssagemErro(this, "Senha não pode estar em branco!", "Erro no Cadastro",240,50);
             return;
-        } else if (nome.equals("")) {
+        }
+        if (nome.equals("")) {
             mensagem.menssagemErro(this, "Informe o nome do usuário!", "Erro no Cadastro",240,50);
             return;
-        } else if (usuario.equals("")) {
+        }
+        if (usuario.equals("")) {
             mensagem.menssagemErro(this, "Informe o usuario para login!", "Erro no Cadastro",240,50);
             return;
-        } else if (!masterCheckBox.isSelected() && !administradorCheckBox.isSelected() && !atendimentoCheckBox.isSelected() && !vendasCheckBox.isSelected() && !cozinhaCheckBox.isSelected()) {
+        }
+        if (!masterCheckBox.isSelected() && !administradorCheckBox.isSelected() && !atendimentoCheckBox.isSelected() && !vendasCheckBox.isSelected() && !cozinhaCheckBox.isSelected()) {
             mensagem.menssagemErro(this, "Nenhuma permissão selecionada para o usuário!", "Erro no Cadastro",260,50);
             return;
         }
