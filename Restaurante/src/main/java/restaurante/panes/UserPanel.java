@@ -127,9 +127,9 @@ public class UserPanel extends javax.swing.JPanel {
         });
 
         addUser.setText("Adicionar Usuário");
-        addUser.setMaximumSize(new java.awt.Dimension(31, 150));
-        addUser.setMinimumSize(new java.awt.Dimension(31, 150));
-        addUser.setPreferredSize(new java.awt.Dimension(31, 150));
+        addUser.setMaximumSize(new java.awt.Dimension(31, 180));
+        addUser.setMinimumSize(new java.awt.Dimension(31, 180));
+        addUser.setPreferredSize(new java.awt.Dimension(31, 180));
         addUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addUserActionPerformed(evt);
@@ -215,8 +215,8 @@ public class UserPanel extends javax.swing.JPanel {
                         .addComponent(permissoesComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 191, Short.MAX_VALUE)
-                        .addComponent(addUser, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 161, Short.MAX_VALUE)
+                        .addComponent(addUser, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
