@@ -40,7 +40,7 @@ public class CriarSubJanela {
         subJanela.setUndecorated(true);
 
         // Cria uma barra de título personalizada
-        JPanel titleBar = Personalizacoes.criarBarraDeTituloSubJanela(texto);
+        JPanel titleBar = Personalizacoes.criarBarraDeTituloSubJanela(texto, subJanela);
 
         // Usa um JRootPane para simular uma barra de título customizada
         JRootPane rootPane = subJanela.getRootPane();

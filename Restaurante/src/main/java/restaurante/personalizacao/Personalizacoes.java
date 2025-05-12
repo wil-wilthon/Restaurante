@@ -150,10 +150,10 @@ public class Personalizacoes {
         return titleBar;
     }
 
-    public static JPanel criarBarraDeTituloSubJanela(String texto) {
+    public static JPanel criarBarraDeTituloSubJanela(String texto, JFrame subJanela) {
         JPanel titleBar = new JPanel(new BorderLayout());
         titleBar.setBackground(new Color(150, 40, 27)); // Cor do fundo (vermelho escuro)
-
+        
         // Título estilizado
         JLabel titleLabel = new JLabel(" "+texto);
         titleLabel.setForeground(Color.WHITE);
@@ -167,7 +167,10 @@ public class Personalizacoes {
         // Botão Fechar
         JButton closeButton = new JButton("X");
         configurarBotao(closeButton, new Color(200, 50, 50));
-        closeButton.addActionListener(e -> System.exit(0)); // Fecha a aplicação
+        closeButton.addActionListener(e -> {
+            subJanela.dispose();
+        }); // Fecha a aplicação
+        
 
         // Adiciona os botões ao painel
         buttonPanel.add(closeButton);
