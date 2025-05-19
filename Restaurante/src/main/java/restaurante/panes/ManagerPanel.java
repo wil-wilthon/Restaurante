@@ -46,6 +46,7 @@ public class ManagerPanel extends javax.swing.JPanel {
 
         usuarioButton = new javax.swing.JButton();
         userConfigButton = new javax.swing.JButton();
+        produtosButton = new javax.swing.JButton();
 
         usuarioButton.setText("Usuario");
         usuarioButton.addActionListener(new java.awt.event.ActionListener() {
@@ -55,34 +56,41 @@ public class ManagerPanel extends javax.swing.JPanel {
         });
 
         userConfigButton.setText("Usuários");
+        userConfigButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         userConfigButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 userConfigButtonActionPerformed(evt);
             }
         });
 
+        produtosButton.setText("Produtos");
+        produtosButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(282, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(usuarioButton)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(userConfigButton, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(247, 247, 247))))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(usuarioButton)
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(245, 245, 245)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(userConfigButton, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                    .addComponent(produtosButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(284, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(usuarioButton)
-                .addGap(65, 65, 65)
+                .addGap(18, 18, 18)
                 .addComponent(userConfigButton)
-                .addContainerGap(259, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(produtosButton)
+                .addContainerGap(265, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -124,6 +132,7 @@ public class ManagerPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton produtosButton;
     private javax.swing.JButton userConfigButton;
     private javax.swing.JButton usuarioButton;
     // End of variables declaration//GEN-END:variables
