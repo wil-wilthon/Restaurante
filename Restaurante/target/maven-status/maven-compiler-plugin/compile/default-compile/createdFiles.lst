@@ -3,8 +3,10 @@ restaurante\personalizacao\CriarSubJanela.class
 restaurante\panes\LoginPanel$1.class
 restaurante\panes\CadastroUsuario$5.class
 restaurante\rules\ButtonRenderer.class
+restaurante\rules\UnidadesMedidas.class
 restaurante\panes\ManagerPanel.class
 restaurante\panes\UserPanel$4.class
+restaurante\rules\Produto.class
 restaurante\panes\UserPanel$3.class
 restaurante\panes\UserPanel$1.class
 restaurante\panes\CadastroUsuario.class
@@ -17,8 +19,10 @@ restaurante\panes\StartPanel.class
 restaurante\panes\CadastroUsuario$6.class
 restaurante\panes\LoginPanel$2.class
 restaurante\rules\Permissoes.class
+restaurante\panes\CadastroProduto.class
 restaurante\panes\UserPanel$5.class
 restaurante\panes\CadastroUsuario$1.class
+restaurante\rules\ProdutosManager.class
 restaurante\personalizacao\Personalizacoes.class
 restaurante\rules\Login.class
 restaurante\panes\CadastroUsuario$4.class
@@ -28,6 +32,7 @@ com\mycompany\restaurante\AddNewUserManual.class
 restaurante\rules\Search.class
 restaurante\rules\Usuario.class
 restaurante\panes\CadastroUsuario$3.class
+restaurante\panes\CadastroProduto$1.class
 restaurante\panes\LoginPanel.class
 restaurante\rules\Logout.class
 restaurante\panes\LoginPanel$5.class
