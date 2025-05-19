@@ -183,7 +183,7 @@ public class CadastroUsuario extends javax.swing.JPanel {
 
     private void confirmarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmarButtonActionPerformed
         String senha = new String(senhaInput.getPassword());
-        String confirmarSenha = new String(senhaInput.getPassword());
+        String confirmarSenha = new String(confirmarSenhaInput.getPassword());
         String nome = nomeInput.getText();
         String usuario = usuarioInput.getText();
         Personalizacoes mensagem = new Personalizacoes();
