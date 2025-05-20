@@ -5,6 +5,7 @@
 package restaurante.panes;
 
 import javax.swing.SwingUtilities;
+import restaurante.personalizacao.Personalizacoes;
 
 /**
  *
@@ -29,6 +30,23 @@ public class CadastroProduto extends javax.swing.JPanel {
     private void initComponents() {
 
         cancelarButton = new javax.swing.JButton();
+        confirmarButton = new javax.swing.JButton();
+        nomeLabel = new javax.swing.JLabel();
+        unidadeMedidaLabel = new javax.swing.JLabel();
+        nomeInput = new javax.swing.JTextField();
+        unidadeMedidaInput = new javax.swing.JTextField();
+        quantidadeInput = new javax.swing.JTextField();
+        quantidadeLabel = new javax.swing.JLabel();
+        eanInput = new javax.swing.JTextField();
+        eanLabel = new javax.swing.JLabel();
+        validadeInput = new javax.swing.JTextField();
+        validadeLabel = new javax.swing.JLabel();
+        precoInput = new javax.swing.JTextField();
+        precoMedioInput = new javax.swing.JTextField();
+        precoMedioLabel = new javax.swing.JLabel();
+        precoLabel = new javax.swing.JLabel();
+        loteInput = new javax.swing.JTextField();
+        loteLabel = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(457, 350));
 
@@ -39,21 +57,175 @@ public class CadastroProduto extends javax.swing.JPanel {
             }
         });
 
+        confirmarButton.setText("Confirmar");
+        confirmarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirmarButtonActionPerformed(evt);
+            }
+        });
+
+        nomeLabel.setText("Nome:");
+
+        unidadeMedidaLabel.setText("Unidade de Medida:");
+
+        nomeInput.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                nomeInputKeyTyped(evt);
+            }
+        });
+
+        unidadeMedidaInput.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                unidadeMedidaInputKeyTyped(evt);
+            }
+        });
+
+        quantidadeInput.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quantidadeInputKeyTyped(evt);
+            }
+        });
+
+        quantidadeLabel.setText("Quantidade:");
+
+        eanInput.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                eanInputKeyTyped(evt);
+            }
+        });
+
+        eanLabel.setText("EAN:");
+
+        validadeInput.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                validadeInputKeyTyped(evt);
+            }
+        });
+
+        validadeLabel.setText("Validade:");
+
+        precoInput.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                precoInputKeyTyped(evt);
+            }
+        });
+
+        precoMedioInput.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                precoMedioInputKeyTyped(evt);
+            }
+        });
+
+        precoMedioLabel.setText("Preço Médio:");
+
+        precoLabel.setText("Preço:");
+
+        loteInput.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                loteInputKeyTyped(evt);
+            }
+        });
+
+        loteLabel.setText("Lote:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(282, Short.MAX_VALUE)
-                .addComponent(cancelarButton)
-                .addGap(99, 99, 99))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(53, 53, 53)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(nomeLabel)
+                            .addComponent(nomeInput)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(quantidadeLabel)
+                                .addGap(95, 95, 95))
+                            .addComponent(quantidadeInput)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(loteInput, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(loteLabel)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(eanLabel)
+                                    .addComponent(eanInput, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(validadeInput, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(validadeLabel)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(33, 33, 33)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(unidadeMedidaLabel)
+                                    .addComponent(unidadeMedidaInput, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(precoLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(confirmarButton))
+                                    .addComponent(precoInput))
+                                .addGap(33, 33, 33)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(precoMedioLabel)
+                            .addComponent(precoMedioInput, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cancelarButton))))
+                .addGap(51, 51, 51))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(277, Short.MAX_VALUE)
-                .addComponent(cancelarButton)
-                .addGap(50, 50, 50))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(nomeLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nomeInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(eanLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(eanInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(validadeLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(validadeInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(loteLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(loteInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(quantidadeLabel)
+                    .addComponent(unidadeMedidaLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(quantidadeInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(unidadeMedidaInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(precoLabel)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(precoMedioLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(precoMedioInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(precoInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(38, 38, 38)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cancelarButton)
+                    .addComponent(confirmarButton))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -64,8 +236,112 @@ public class CadastroProduto extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_cancelarButtonActionPerformed
 
+    private void confirmarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmarButtonActionPerformed
+        /*String senha = new String(senhaInput.getPassword());
+        String confirmarSenha = new String(confirmarSenhaInput.getPassword());
+        String nome = nomeInput.getText();
+        String usuario = usuarioInput.getText();
+        Personalizacoes mensagem = new Personalizacoes();
+
+        if (masterCheckBox.isSelected()) {
+            permissao.add(Permissoes.MASTER);
+        }
+        if (administradorCheckBox.isSelected()) {
+            permissao.add(Permissoes.ADMINISTRADOR);
+        }
+        if (atendimentoCheckBox.isSelected()) {
+            permissao.add(Permissoes.ATENDIMENTO);
+        }
+        if (vendasCheckBox.isSelected()) {
+            permissao.add(Permissoes.VENDAS);
+        }
+        if (cozinhaCheckBox.isSelected()) {
+            permissao.add(Permissoes.COZINHA);
+        }
+
+        if (!senha.equals(confirmarSenha)) {
+            mensagem.menssagemErro(this, "As senhas não são iguais!", "Erro no Cadastro",240,50);
+            return;
+        }
+        if (senha.equals("")) {
+            mensagem.menssagemErro(this, "Senha não pode estar em branco!", "Erro no Cadastro",240,50);
+            return;
+        }
+        if (nome.equals("")) {
+            mensagem.menssagemErro(this, "Informe o nome do usuário!", "Erro no Cadastro",240,50);
+            return;
+        }
+        if (usuario.equals("")) {
+            mensagem.menssagemErro(this, "Informe o usuario para login!", "Erro no Cadastro",240,50);
+            return;
+        }
+        if (!masterCheckBox.isSelected() && !administradorCheckBox.isSelected() && !atendimentoCheckBox.isSelected() && !vendasCheckBox.isSelected() && !cozinhaCheckBox.isSelected()) {
+            mensagem.menssagemErro(this, "Nenhuma permissão selecionada para o usuário!", "Erro no Cadastro",260,50);
+            return;
+        }
+
+        UsuarioManager manager = new UsuarioManager();
+        Usuario newUsuario = new Usuario(manager.atribuirID(), nome, usuario, senha, permissao);
+        manager.adicionarUsuario(newUsuario);
+        mensagem.menssagemConfirma(this, "Usuário cadastrado com sucesso!", "Sucesso no Cadastro",260,50);
+
+        java.awt.Window window = SwingUtilities.getWindowAncestor(this);
+        if (window != null) {
+            window.dispose();
+        }*/
+    }//GEN-LAST:event_confirmarButtonActionPerformed
+
+    private void nomeInputKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nomeInputKeyTyped
+        Personalizacoes.placeHolderText(nomeInput, "Insira o nome do produto");
+    }//GEN-LAST:event_nomeInputKeyTyped
+
+    private void unidadeMedidaInputKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_unidadeMedidaInputKeyTyped
+        
+    }//GEN-LAST:event_unidadeMedidaInputKeyTyped
+
+    private void quantidadeInputKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quantidadeInputKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_quantidadeInputKeyTyped
+
+    private void eanInputKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_eanInputKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_eanInputKeyTyped
+
+    private void validadeInputKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_validadeInputKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_validadeInputKeyTyped
+
+    private void precoInputKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_precoInputKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_precoInputKeyTyped
+
+    private void precoMedioInputKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_precoMedioInputKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_precoMedioInputKeyTyped
+
+    private void loteInputKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_loteInputKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_loteInputKeyTyped
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cancelarButton;
+    private javax.swing.JButton confirmarButton;
+    private javax.swing.JTextField eanInput;
+    private javax.swing.JLabel eanLabel;
+    private javax.swing.JTextField loteInput;
+    private javax.swing.JLabel loteLabel;
+    private javax.swing.JTextField nomeInput;
+    private javax.swing.JLabel nomeLabel;
+    private javax.swing.JTextField precoInput;
+    private javax.swing.JLabel precoLabel;
+    private javax.swing.JTextField precoMedioInput;
+    private javax.swing.JLabel precoMedioLabel;
+    private javax.swing.JTextField quantidadeInput;
+    private javax.swing.JLabel quantidadeLabel;
+    private javax.swing.JTextField unidadeMedidaInput;
+    private javax.swing.JLabel unidadeMedidaLabel;
+    private javax.swing.JTextField validadeInput;
+    private javax.swing.JLabel validadeLabel;
     // End of variables declaration//GEN-END:variables
 }
