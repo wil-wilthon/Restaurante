@@ -4,9 +4,15 @@
  */
 package restaurante.panes;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.util.List;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.JTableHeader;
 import restaurante.personalizacao.CriarSubJanela;
+import restaurante.personalizacao.Personalizacoes;
 import restaurante.rules.Permissoes;
 
 /**
@@ -45,6 +51,7 @@ public class ProdutoPanel extends javax.swing.JPanel {
         addProduct = new javax.swing.JButton();
         searchProductName = new javax.swing.JTextField();
         searchProductEan = new javax.swing.JTextField();
+        deleteButton = new javax.swing.JButton();
 
         consultaTable.setBackground(new java.awt.Color(255, 220, 224));
         consultaTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -123,6 +130,15 @@ public class ProdutoPanel extends javax.swing.JPanel {
             }
         });
 
+        deleteButton.setText("Excluir");
+        deleteButton.setMaximumSize(new java.awt.Dimension(31, 150));
+        deleteButton.setMinimumSize(new java.awt.Dimension(31, 150));
+        deleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -138,6 +154,8 @@ public class ProdutoPanel extends javax.swing.JPanel {
                         .addComponent(searchProductName, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(searchProductEan, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(addProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
@@ -151,7 +169,8 @@ public class ProdutoPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(searchProductName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(searchProductEan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(searchProductEan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                 .addComponent(panelTableConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(22, 22, 22))
@@ -163,7 +182,8 @@ public class ProdutoPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_usuarioButtonActionPerformed
 
     private void addProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addProductActionPerformed
-       
+       var cadastroProduto = new CadastroProduto(this.permissoes);
+       CriarSubJanela.subJanelaPadrao(cadastroProduto, 650, 450);
     }//GEN-LAST:event_addProductActionPerformed
 
     private void searchProductNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchProductNameKeyTyped
@@ -174,10 +194,15 @@ public class ProdutoPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_searchProductEanKeyTyped
 
+    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
+        
+    }//GEN-LAST:event_deleteButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addProduct;
     private javax.swing.JTable consultaTable;
+    private javax.swing.JButton deleteButton;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JPanel panelTableConsulta;
     private javax.swing.JTextField searchProductEan;
@@ -186,7 +211,29 @@ public class ProdutoPanel extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private void personalizarInterface() {
+        // Cores temáticas de restaurante
+        Color secondaryColor = new Color(255, 243, 224); // Creme claro
         
+        // Personaliza os botões
+        Personalizacoes.personalizarBotao(usuarioButton, 16, false,null,null);
+        Personalizacoes.personalizarBotao(addProduct, 16, true, null, null);
+        Personalizacoes.personalizarBotao(deleteButton, 16, true, null, null);
+        deleteButton.setVisible(false);
+        
+        // Personaliza os campos de entrada
+        Personalizacoes.personalizarCampos(searchProductName, 16, null, null);
+        Personalizacoes.personalizarCampos(searchProductEan, 16, null, null);
+        
+        //Personalizar tabela
+        JTableHeader header = consultaTable.getTableHeader();
+        header.setForeground(Color.WHITE);
+        header.setBackground(new Color(150, 40, 27)); // Tom vinho compatível com seleção
+        header.setFont(new Font("Segoe UI", Font.BOLD, 16));
+        ((DefaultTableCellRenderer) header.getDefaultRenderer())
+                .setHorizontalAlignment(JLabel.CENTER);
+
+        // Fundo do painel
+        setBackground(secondaryColor);
     }
 
     private void Carregar() {

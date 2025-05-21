@@ -15,6 +15,7 @@ restaurante\panes\StartPanel.class
 restaurante\panes\CadastroUsuario$6.class
 restaurante\panes\LoginPanel$2.class
 restaurante\panes\UserPanel$5.class
+restaurante\panes\ProdutoPanel$6.class
 restaurante\personalizacao\Personalizacoes.class
 restaurante\rules\Login.class
 restaurante\panes\UserPanel.class

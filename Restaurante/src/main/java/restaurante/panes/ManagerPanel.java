@@ -190,7 +190,7 @@ public class ManagerPanel extends javax.swing.JPanel {
     private void personalizarInterface() {
         // Personaliza os labels
         Personalizacoes.personalizarBotao(usuarioButton, 16, false,null,null);
-        Personalizacoes.personalizarBotao(produtosButton, 16, false, null, null);
+        Personalizacoes.personalizarBotao(produtosButton, 16, true, null, null);
         Personalizacoes.personalizarBotao(userConfigButton, 16, true,null,null);
 
         // Fundo do painel

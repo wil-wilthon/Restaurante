@@ -4,8 +4,11 @@
  */
 package restaurante.panes;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.SwingUtilities;
 import restaurante.personalizacao.Personalizacoes;
+import restaurante.rules.Permissoes;
 
 /**
  *
@@ -13,11 +16,15 @@ import restaurante.personalizacao.Personalizacoes;
  */
 public class CadastroProduto extends javax.swing.JPanel {
 
+    private final List<Permissoes> permissoes;
+
     /**
      * Creates new form CadastroProduto
      */
-    public CadastroProduto() {
+    public CadastroProduto(List<Permissoes> permissoes) {
         initComponents();
+        this.permissoes = permissoes;
+        permissoes();
     }
 
     /**
@@ -377,4 +384,8 @@ public class CadastroProduto extends javax.swing.JPanel {
     private javax.swing.JTextField validadeInput;
     private javax.swing.JLabel validadeLabel;
     // End of variables declaration//GEN-END:variables
+
+    private void permissoes() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
