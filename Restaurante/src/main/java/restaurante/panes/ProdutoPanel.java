@@ -26,19 +26,74 @@ public class ProdutoPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        panelTableConsulta = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        consultaTable = new javax.swing.JTable();
+
+        consultaTable.setBackground(new java.awt.Color(255, 220, 224));
+        consultaTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Selecionar", "Editar", "EAN", "Nome", "Un. de Med.", "Quantidade", "Custo", "Preço"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                true, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        consultaTable.setGridColor(new java.awt.Color(255, 255, 255));
+        consultaTable.setRowHeight(30);
+        consultaTable.setSelectionBackground(new java.awt.Color(150, 40, 27));
+        consultaTable.setSelectionForeground(new java.awt.Color(255, 255, 255));
+        jScrollPane2.setViewportView(consultaTable);
+        if (consultaTable.getColumnModel().getColumnCount() > 0) {
+            consultaTable.getColumnModel().getColumn(0).setMinWidth(70);
+            consultaTable.getColumnModel().getColumn(0).setPreferredWidth(70);
+            consultaTable.getColumnModel().getColumn(0).setMaxWidth(70);
+            consultaTable.getColumnModel().getColumn(1).setMinWidth(50);
+            consultaTable.getColumnModel().getColumn(1).setPreferredWidth(50);
+            consultaTable.getColumnModel().getColumn(1).setMaxWidth(50);
+        }
+
+        javax.swing.GroupLayout panelTableConsultaLayout = new javax.swing.GroupLayout(panelTableConsulta);
+        panelTableConsulta.setLayout(panelTableConsultaLayout);
+        panelTableConsultaLayout.setHorizontalGroup(
+            panelTableConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTableConsultaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1183, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        panelTableConsultaLayout.setVerticalGroup(
+            panelTableConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 404, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1019, Short.MAX_VALUE)
+            .addComponent(panelTableConsulta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 511, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(85, Short.MAX_VALUE)
+                .addComponent(panelTableConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable consultaTable;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JPanel panelTableConsulta;
     // End of variables declaration//GEN-END:variables
 }

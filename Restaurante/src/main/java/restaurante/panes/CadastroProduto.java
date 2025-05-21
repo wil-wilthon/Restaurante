@@ -42,11 +42,13 @@ public class CadastroProduto extends javax.swing.JPanel {
         validadeInput = new javax.swing.JTextField();
         validadeLabel = new javax.swing.JLabel();
         precoInput = new javax.swing.JTextField();
-        precoMedioInput = new javax.swing.JTextField();
-        precoMedioLabel = new javax.swing.JLabel();
+        custoInput = new javax.swing.JTextField();
+        custoLabel = new javax.swing.JLabel();
         precoLabel = new javax.swing.JLabel();
         loteInput = new javax.swing.JTextField();
         loteLabel = new javax.swing.JLabel();
+        custoMedioInput = new javax.swing.JTextField();
+        custoMedioLabel = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(457, 350));
 
@@ -110,13 +112,13 @@ public class CadastroProduto extends javax.swing.JPanel {
             }
         });
 
-        precoMedioInput.addKeyListener(new java.awt.event.KeyAdapter() {
+        custoInput.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                precoMedioInputKeyTyped(evt);
+                custoInputKeyTyped(evt);
             }
         });
 
-        precoMedioLabel.setText("Preço Médio:");
+        custoLabel.setText("Custo:");
 
         precoLabel.setText("Preço:");
 
@@ -128,6 +130,14 @@ public class CadastroProduto extends javax.swing.JPanel {
 
         loteLabel.setText("Lote:");
 
+        custoMedioInput.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                custoMedioInputKeyTyped(evt);
+            }
+        });
+
+        custoMedioLabel.setText("Custo Médio:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -136,47 +146,60 @@ public class CadastroProduto extends javax.swing.JPanel {
                 .addGap(53, 53, 53)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(nomeLabel)
-                            .addComponent(nomeInput)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(quantidadeLabel)
-                                .addGap(95, 95, 95))
-                            .addComponent(quantidadeInput)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(loteInput, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(loteLabel)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(eanLabel)
-                                    .addComponent(eanInput, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(validadeInput, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(validadeLabel)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(33, 33, 33)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(unidadeMedidaLabel)
-                                    .addComponent(unidadeMedidaInput, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 0, Short.MAX_VALUE))))
+                            .addComponent(loteInput, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(loteLabel))
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nomeLabel)
+                            .addComponent(nomeInput, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(eanLabel)
+                            .addComponent(eanInput, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(validadeInput, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(validadeLabel))
+                        .addGap(51, 51, 51))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(precoLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
-                                        .addComponent(confirmarButton))
-                                    .addComponent(precoInput))
-                                .addGap(33, 33, 33)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(precoMedioLabel)
-                            .addComponent(precoMedioInput, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cancelarButton))))
-                .addGap(51, 51, 51))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(quantidadeLabel)
+                                        .addGap(95, 95, 95))
+                                    .addComponent(quantidadeInput, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(33, 33, 33))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(precoLabel)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(precoInput)
+                                    .addGap(33, 33, 33))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(custoLabel)
+                                    .addComponent(custoInput, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(51, 51, 51))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(unidadeMedidaLabel)
+                                    .addComponent(unidadeMedidaInput, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE))))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(custoMedioLabel)
+                    .addComponent(custoMedioInput, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(146, 146, 146))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(131, 131, 131)
+                .addComponent(confirmarButton)
+                .addGap(33, 33, 33)
+                .addComponent(cancelarButton)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -191,7 +214,7 @@ public class CadastroProduto extends javax.swing.JPanel {
                         .addComponent(eanLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(eanInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(validadeLabel)
@@ -201,7 +224,7 @@ public class CadastroProduto extends javax.swing.JPanel {
                         .addComponent(loteLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(loteInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(quantidadeLabel)
                     .addComponent(unidadeMedidaLabel))
@@ -211,21 +234,25 @@ public class CadastroProduto extends javax.swing.JPanel {
                     .addComponent(unidadeMedidaInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(precoLabel)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(precoMedioLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(precoMedioInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(precoLabel))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(precoInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(38, 38, 38)
+                        .addGap(34, 34, 34)
+                        .addComponent(precoInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(custoLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(custoInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(custoMedioLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(custoMedioInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cancelarButton)
                     .addComponent(confirmarButton))
-                .addContainerGap(56, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -315,18 +342,26 @@ public class CadastroProduto extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_precoInputKeyTyped
 
-    private void precoMedioInputKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_precoMedioInputKeyTyped
+    private void custoInputKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_custoInputKeyTyped
         // TODO add your handling code here:
-    }//GEN-LAST:event_precoMedioInputKeyTyped
+    }//GEN-LAST:event_custoInputKeyTyped
 
     private void loteInputKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_loteInputKeyTyped
         // TODO add your handling code here:
     }//GEN-LAST:event_loteInputKeyTyped
 
+    private void custoMedioInputKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_custoMedioInputKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_custoMedioInputKeyTyped
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cancelarButton;
     private javax.swing.JButton confirmarButton;
+    private javax.swing.JTextField custoInput;
+    private javax.swing.JLabel custoLabel;
+    private javax.swing.JTextField custoMedioInput;
+    private javax.swing.JLabel custoMedioLabel;
     private javax.swing.JTextField eanInput;
     private javax.swing.JLabel eanLabel;
     private javax.swing.JTextField loteInput;
@@ -335,8 +370,6 @@ public class CadastroProduto extends javax.swing.JPanel {
     private javax.swing.JLabel nomeLabel;
     private javax.swing.JTextField precoInput;
     private javax.swing.JLabel precoLabel;
-    private javax.swing.JTextField precoMedioInput;
-    private javax.swing.JLabel precoMedioLabel;
     private javax.swing.JTextField quantidadeInput;
     private javax.swing.JLabel quantidadeLabel;
     private javax.swing.JTextField unidadeMedidaInput;

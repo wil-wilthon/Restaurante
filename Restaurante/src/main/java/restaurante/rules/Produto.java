@@ -20,9 +20,10 @@ public class Produto implements Serializable {
     private double quantidade;
     private String dataValidade;
     private double preco;
-    private double precoMedio;
+    private double custo;
+    private double custoMedio;
 
-    public Produto(int id, String nome, String ean, int lote, UnidadesMedidas unidade, double quantidade, String dataValidade, double preco, double precoMedio) {
+    public Produto(int id, String nome, String ean, int lote, UnidadesMedidas unidade, double quantidade, String dataValidade, double preco, double custo, double custoMedio) {
         this.id = id;
         this.nome = nome;
         this.ean = ean;
@@ -31,7 +32,8 @@ public class Produto implements Serializable {
         this.quantidade = quantidade;
         this.dataValidade = dataValidade;
         this.preco = preco;
-        this.precoMedio = precoMedio;
+        this.custo = custo;
+        this.custoMedio = custoMedio;
     }
 
     public int getID() {
@@ -98,12 +100,20 @@ public class Produto implements Serializable {
         this.preco = preco;
     }
 
-    public double getPrecoMedio() {
-        return precoMedio;
+    public double getCusto() {
+        return custo;
     }
 
-    public void setPrecoMedio(double precoMedio) {
-        this.precoMedio = precoMedio;
+    public void setCusto(double custo) {
+        this.custo = custo;
+    }
+
+    public double getCustoMedio() {
+        return custoMedio;
+    }
+
+    public void setCustoMedio(double custoMedio) {
+        this.custoMedio = custoMedio;
     }
     
     
