@@ -4,6 +4,9 @@
  */
 package restaurante.panes;
 
+import javax.swing.JFrame;
+import restaurante.personalizacao.CriarSubJanela;
+
 /**
  *
  * @author User
@@ -29,6 +32,10 @@ public class ProdutoPanel extends javax.swing.JPanel {
         panelTableConsulta = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         consultaTable = new javax.swing.JTable();
+        usuarioButton = new javax.swing.JButton();
+        addProduct = new javax.swing.JButton();
+        searchProductName = new javax.swing.JTextField();
+        searchProductEan = new javax.swing.JTextField();
 
         consultaTable.setBackground(new java.awt.Color(255, 220, 224));
         consultaTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -36,11 +43,11 @@ public class ProdutoPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Selecionar", "Editar", "EAN", "Nome", "Un. de Med.", "Quantidade", "Custo", "Preço"
+                "Selecionar", "EAN", "Nome", "Un. de Med.", "Quantidade", "Custo", "Preço"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                true, false, false, false, false, false, false, false
+                true, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -56,9 +63,6 @@ public class ProdutoPanel extends javax.swing.JPanel {
             consultaTable.getColumnModel().getColumn(0).setMinWidth(70);
             consultaTable.getColumnModel().getColumn(0).setPreferredWidth(70);
             consultaTable.getColumnModel().getColumn(0).setMaxWidth(70);
-            consultaTable.getColumnModel().getColumn(1).setMinWidth(50);
-            consultaTable.getColumnModel().getColumn(1).setPreferredWidth(50);
-            consultaTable.getColumnModel().getColumn(1).setMaxWidth(50);
         }
 
         javax.swing.GroupLayout panelTableConsultaLayout = new javax.swing.GroupLayout(panelTableConsulta);
@@ -75,25 +79,100 @@ public class ProdutoPanel extends javax.swing.JPanel {
             .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 404, Short.MAX_VALUE)
         );
 
+        usuarioButton.setText("Usuario");
+        usuarioButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                usuarioButtonActionPerformed(evt);
+            }
+        });
+
+        addProduct.setText("Adicionar Produto");
+        addProduct.setMaximumSize(new java.awt.Dimension(31, 180));
+        addProduct.setMinimumSize(new java.awt.Dimension(31, 180));
+        addProduct.setPreferredSize(new java.awt.Dimension(31, 180));
+        addProduct.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addProductActionPerformed(evt);
+            }
+        });
+
+        searchProductName.setToolTipText("");
+        searchProductName.setMinimumSize(new java.awt.Dimension(64, 30));
+        searchProductName.setPreferredSize(new java.awt.Dimension(64, 30));
+        searchProductName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                searchProductNameKeyTyped(evt);
+            }
+        });
+
+        searchProductEan.setToolTipText("");
+        searchProductEan.setMinimumSize(new java.awt.Dimension(64, 30));
+        searchProductEan.setPreferredSize(new java.awt.Dimension(64, 30));
+        searchProductEan.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                searchProductEanKeyTyped(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(panelTableConsulta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(usuarioButton))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(searchProductName, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(searchProductEan, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(addProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(85, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(usuarioButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(addProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(searchProductName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(searchProductEan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                 .addComponent(panelTableConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(22, 22, 22))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void usuarioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioButtonActionPerformed
+        CriarSubJanela.subMenuLougout(usuarioButton, (JFrame) this.getTopLevelAncestor());
+    }//GEN-LAST:event_usuarioButtonActionPerformed
+
+    private void addProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addProductActionPerformed
+       
+    }//GEN-LAST:event_addProductActionPerformed
+
+    private void searchProductNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchProductNameKeyTyped
+        
+    }//GEN-LAST:event_searchProductNameKeyTyped
+
+    private void searchProductEanKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchProductEanKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchProductEanKeyTyped
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addProduct;
     private javax.swing.JTable consultaTable;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JPanel panelTableConsulta;
+    private javax.swing.JTextField searchProductEan;
+    private javax.swing.JTextField searchProductName;
+    private javax.swing.JButton usuarioButton;
     // End of variables declaration//GEN-END:variables
 }
