@@ -65,6 +65,11 @@ public class ManagerPanel extends javax.swing.JPanel {
 
         produtosButton.setText("Produtos");
         produtosButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        produtosButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                produtosButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -130,6 +135,38 @@ public class ManagerPanel extends javax.swing.JPanel {
             loginFrame.dispose();
     }//GEN-LAST:event_userConfigButtonActionPerformed
 
+    private void produtosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_produtosButtonActionPerformed
+        // Exibe o painel StartPanel de acordo com as permissões
+            var managerPanel = new ProdutoPanel(this.permissoes, this.nomeUsuario);
+            JFrame startFrame = new JFrame("Configurações de produtos");
+            startFrame.setSize(400, 300);
+            startFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            startFrame.setLocationRelativeTo(null);
+            startFrame.add(managerPanel);
+            startFrame.setExtendedState(JFrame.MAXIMIZED_BOTH); // Maximiza o JFrame
+            startFrame.setUndecorated(true);
+
+            // Cria uma barra de título personalizada
+            JPanel titleBar = Personalizacoes.criarBarraDeTituloPadrao(startFrame);
+
+            // Usa um JRootPane para simular uma barra de título customizada
+            JRootPane rootPane = startFrame.getRootPane();
+            rootPane.setWindowDecorationStyle(JRootPane.NONE); // Remove a decoração padrão
+
+            // Cria um painel principal e adiciona a barra de título customizada
+            JPanel contentPane = new JPanel(new BorderLayout());
+            contentPane.add(titleBar, BorderLayout.NORTH);
+            contentPane.add(new ProdutoPanel(this.permissoes, this.nomeUsuario), BorderLayout.CENTER);
+            startFrame.setContentPane(contentPane);
+
+            // Altera o ícone da janela (coloque o ícone na pasta resources ou no mesmo diretório)
+            startFrame.setIconImage(new ImageIcon("/images/icon.png").getImage());
+
+            startFrame.setVisible(true);
+            JFrame loginFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
+            loginFrame.dispose();
+    }//GEN-LAST:event_produtosButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton produtosButton;
@@ -153,6 +190,7 @@ public class ManagerPanel extends javax.swing.JPanel {
     private void personalizarInterface() {
         // Personaliza os labels
         Personalizacoes.personalizarBotao(usuarioButton, 16, false,null,null);
+        Personalizacoes.personalizarBotao(produtosButton, 16, false, null, null);
         Personalizacoes.personalizarBotao(userConfigButton, 16, true,null,null);
 
         // Fundo do painel

@@ -4,8 +4,10 @@
  */
 package restaurante.panes;
 
+import java.util.List;
 import javax.swing.JFrame;
 import restaurante.personalizacao.CriarSubJanela;
+import restaurante.rules.Permissoes;
 
 /**
  *
@@ -13,11 +15,18 @@ import restaurante.personalizacao.CriarSubJanela;
  */
 public class ProdutoPanel extends javax.swing.JPanel {
 
+    private final List<Permissoes> permissoes;
+    private final String nomeUsuario;
+    
     /**
      * Creates new form ProdutoPanel
      */
-    public ProdutoPanel() {
+    public ProdutoPanel(List<Permissoes> permissoes, String nomeUsuario) {
         initComponents();
+        this.permissoes = permissoes;
+        this.nomeUsuario = nomeUsuario;
+        personalizarInterface();
+        Carregar();
     }
 
     /**
@@ -175,4 +184,14 @@ public class ProdutoPanel extends javax.swing.JPanel {
     private javax.swing.JTextField searchProductName;
     private javax.swing.JButton usuarioButton;
     // End of variables declaration//GEN-END:variables
+
+    private void personalizarInterface() {
+        
+    }
+
+    private void Carregar() {
+        String seta = "↓";
+        usuarioButton.setText(nomeUsuario + seta);
+        panelTableConsulta.setVisible(false);
+    }
 }

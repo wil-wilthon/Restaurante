@@ -1,7 +1,9 @@
 restaurante\personalizacao\CriarSubJanela.class
 restaurante\panes\LoginPanel$1.class
 restaurante\panes\CadastroUsuario$5.class
+restaurante\panes\ProdutoPanel$2.class
 restaurante\panes\CadastroProduto$9.class
+restaurante\panes\ProdutoPanel$5.class
 restaurante\panes\ManagerPanel.class
 restaurante\panes\UserPanel$4.class
 restaurante\panes\CadastroProduto$10.class
@@ -28,6 +30,7 @@ restaurante\panes\CadastroProduto$6.class
 restaurante\panes\StartPanel$2.class
 restaurante\panes\CadastroProduto$3.class
 restaurante\rules\App.class
+restaurante\panes\ProdutoPanel$3.class
 restaurante\rules\Search$1.class
 restaurante\panes\UserPanel$2.class
 restaurante\panes\UserPanel$6.class
@@ -36,6 +39,7 @@ restaurante\rules\UnidadesMedidas.class
 restaurante\panes\CadastroProduto$4.class
 restaurante\rules\Produto.class
 restaurante\panes\UserPanel$3.class
+restaurante\panes\ProdutoPanel$4.class
 restaurante\panes\CadastroUsuario.class
 restaurante\panes\ProdutoPanel.class
 restaurante\panes\CadastroProduto$7.class
@@ -45,6 +49,7 @@ restaurante\panes\StartPanel$1.class
 restaurante\panes\ProdutoPanel$1.class
 restaurante\rules\Permissoes.class
 restaurante\panes\CadastroProduto.class
+restaurante\panes\ManagerPanel$3.class
 restaurante\panes\CadastroUsuario$1.class
 restaurante\rules\ProdutosManager.class
 restaurante\panes\CadastroUsuario$4.class
